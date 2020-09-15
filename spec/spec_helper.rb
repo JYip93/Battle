@@ -3,7 +3,10 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+<<<<<<< HEAD
 require 'features/web_helpers'
+=======
+>>>>>>> 7fb41bca17706a0ec83bb24449b348e696b6fc36
 
 Capybara.app = Battle
 
