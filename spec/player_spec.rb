@@ -3,6 +3,7 @@ require 'player'
 describe Player do
 
   it 'returns the name' do
-    expect(subject.name('Louis')).to eq('Louis')
+    subject = Player.new('Louis')
+    expect(subject.name()).to eq('Louis')
   end
 end

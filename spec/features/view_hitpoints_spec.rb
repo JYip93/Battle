@@ -18,9 +18,15 @@ feature 'attack player 2' do
   scenario 'Attacking player 2 and get confirmation back' do
     sign_in_and_play
     click_button 'Attack'
-    expect(page).to have_content "Johnny has 30HP remaining"
+    expect(page).to have_content "Johnny has 40HP remaining"
   end
 
-
+  feature 'Reduce HP from attack' do
+    scenario "player 2's HP is reduced by 10 after attack" do
+      sign_in_and_play
+      click_button 'Attack'
+      expect(@hp2).to eq 40
+    end
+  end
 
 end
