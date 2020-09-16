@@ -8,11 +8,11 @@ describe Player do
     expect(johnny.name).to eq('johnny')
   end
 
-  describe '#attack' do
-    it 'reduces HP by 10' do
-      expect { johnny.attack(louis) }.to change { louis.hp }.by(-Player::DEFAULT_DAMAGE)
-    end
-  end
+  # describe '#attack' do
+  #   it 'reduces HP by 10' do
+  #     expect { johnny.attack(louis) }.to change { louis.hp }.by(-Player::DEFAULT_DAMAGE)
+  #   end
+  # end
 
   describe '#receive_damage' do
     it 'expects HP to change' do

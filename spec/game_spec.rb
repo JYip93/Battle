@@ -1,15 +1,19 @@
 require 'game'
-require 'player'
 
 
 describe Game do
-    let(:player_double) {double('player double', :hp => 50)}
+    let(:player_double) {double(:player_double, :hp => 50)}
+
+    describe 'initialize' do
+        it 'accepts 2 player instances' do
+            expect(Game).to respond_to(:new).with(2).arguments
+        end
+    end
 
     describe '#attack' do
         it 'Game attacks players and changes players hp' do
-            allow(player_double).to receive(:hp)
-            allow(player_double).to receive(:receive_damage) {40}
-            expect {subject.attack(player_double)}.to change {player_double.hp}.by(-Player::DEFAULT_DAMAGE)
+            expect(player_double).to receive(:receive_damage)
+            subject.attack(player_double)
         end
     end
 end    

@@ -29,7 +29,7 @@ enable :sessions
     @name1 = $name1.name
     @name2 = $name2.name
     @hp1 = $name1.hp
-    @hp2 = $name1.attack($name2)
+    @hp2 = Game.new.attack($name2)
     erb(:attack)
   end
 
