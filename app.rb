@@ -29,8 +29,14 @@ enable :sessions
     @name2 = $game.player2.name
     @hp1 = $game.player1.hp
     @hp2 = $game.attack($game.player2)
-    erb(:attack)
+      erb(:attack)
   end
+
+
+  get "/attack" do
+    
+  end
+  
 
   run! if app_file == $0
 end
