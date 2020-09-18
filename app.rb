@@ -17,19 +17,17 @@ enable :sessions
   end
 
   get '/play' do
-    @name1 = $game.player1.name
-    @name2 = $game.player2.name
     @hp1 = $game.player1.hp
     @hp2 = $game.player2.hp
     erb(:play)
   end
 
   post "/attack" do
-    @name1 = $game.player1.name
-    @name2 = $game.player2.name
-    @hp1 = $game.player1.hp
-    @hp2 = $game.attack($game.player2)
+   # @hp1 = $game.player1.hp
+    $game.attack($game.opponent)
+    $game.switch_turns
       erb(:attack)
+    
   end
 
 

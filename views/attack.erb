@@ -1,4 +1,6 @@
 
-<div><%= @name1 %> has attacked <%= @name2 %>
-<div><%= @name2%> has <%= @hp2%>HP remaining
+<div><%= $game.current_player.name %> has attacked <%= $game.opponent.name %>
+<div><%= $game.opponent.name%> has <%= @hp2%>HP remaining
+
 </div>
+<a href="/play"> OK </a>

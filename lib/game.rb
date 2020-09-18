@@ -1,11 +1,13 @@
+#require './player.rb'
 class Game
 
-attr_reader :player1, :player2
+attr_reader :player1, :player2, :current_player
 
     def initialize(player1, player2)
         @player1 = Player.new(player1)
         @player2 = Player.new(player2)
-        @turn = 0
+        @players =[@player1, @player2] 
+        @current_player = @player1
     end
 
 
@@ -16,7 +18,11 @@ attr_reader :player1, :player2
     end
      
     def switch_turns
-        @turn += 1
+        @current_player = (@players - [@current_player]).first
+    end
+
+    def opponent
+        @players.select {|player| player != @current_player}.first
     end
     
    
