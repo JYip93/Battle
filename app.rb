@@ -24,8 +24,9 @@ enable :sessions
 
   post "/attack" do
    # @hp1 = $game.player1.hp
-    $game.attack($game.opponent)
     $game.switch_turns
+    $game.attack($game.current_player)
+    
       erb(:attack)
     
   end

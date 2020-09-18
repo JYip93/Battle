@@ -29,4 +29,23 @@ feature 'attack player 2' do
     end
   end
 
+  scenario "player 1's HP is reduced by 10 after attack" do
+    sign_in_and_play
+    click_button 'Attack'
+    click_link 'OK'
+    click_button 'Attack'
+    expect(page).to have_content "Ollie has 40HP remaining"
+  end
+
+
+  feature "Show lose message when player reaches 0HP" do
+    scenario "Show 'Lose' when player 2 has 0HP" do
+      sign_in_and_play
+      11.times do 
+        click_button 'Attack'
+        click_link 'OK'
+      end
+      expect(page).to have_content 'Johnny loses'
+    end
+  end
 end
