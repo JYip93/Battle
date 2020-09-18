@@ -41,7 +41,7 @@ feature 'attack player 2' do
   feature "Show lose message when player reaches 0HP" do
     scenario "Show 'Lose' when player 2 has 0HP" do
       sign_in_and_play
-      11.times do 
+      9.times do 
         click_button 'Attack'
         click_link 'OK'
       end
