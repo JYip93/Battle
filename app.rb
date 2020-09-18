@@ -12,21 +12,24 @@ enable :sessions
   end
 
   post "/names" do
-    @game = Game.build(params[:name1], params[:name2])
+    @player1 = params[:name1]
+    @player2 = params[:name2]
+
+    @game = Game.build(@player1, @player2)
     redirect to('/play')
   end
 
   get '/play' do
-    @game = Game.make_instance
-    $game.set_losing_message
+    @game = Game.instance
+    @game.set_losing_message
     erb(:play)
   end
 
   post "/attack" do
-    @game = Game.make_instance
-   # @hp1 = $game.player1.hp
-    $game.switch_turns
-    $game.attack($game.current_player)
+    @game = Game.instance
+   # @hp1 = @game.player1.hp
+    @game.switch_turns
+    @game.attack(@game.current_player)
     
       erb(:attack)
     

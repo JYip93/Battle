@@ -11,6 +11,13 @@ attr_reader :player1, :player2, :current_player, :losing_message
         @losing_message = ''
     end
 
+    def self.make_instance
+       @game
+    end
+
+    def self.build(player_1, player_2)
+        @game = Game.new(player_1, player_2)
+    end
 
 
   
